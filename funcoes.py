@@ -1,6 +1,7 @@
 '''
     Código desenvolvido para a matéria de Redes Neurais e Algoritmos Genéticos
-    da Ilum - Escola de Ciência ministrada pelo professor Daniel Cassar
+    da Ilum - Escola de Ciência ministrada pelo professor doutor Daniel Roberto
+    Cassar
 
     Autores do código:
     Gustavo Duarte Verçosa

@@ -349,8 +349,8 @@ def cria_mlp(
 
         loss = fn_perda(y_pred, y_treino)
         loop.set_postfix_str(
-            f'Perda: {loss.data:<20.10f} / Neurons: {NEURONIOS_C1,
-            NEURONIOS_C2, NEURONIOS_C3} / LR: {TAXA_DE_APRENDIZADO}'
+            f'''Perda: {loss.data:<20.10f} / Neurons: {NEURONIOS_C1,
+            NEURONIOS_C2, NEURONIOS_C3} / LR: {TAXA_DE_APRENDIZADO}'''
         )
         loop.refresh()
         

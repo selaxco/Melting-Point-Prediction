@@ -26,5 +26,8 @@
   
 <h2 align="left">Referências</h2>
 <blockquote> 
-<p align="justify"> </p>
+<p align="justify">[1] </p>
+<p align="justify">[2] TALAPATI, Sumalatha Rani; GOYAL, Megha; NATARAJ, Vijayashankar; <i>et al</i>. Structural and binding studies of cyclin‐dependent kinase 2 with NU6140 inhibitor. <b>Chemical Biology & Drug Design</b>, v. 98, n. 5, p. 857–868, 2021.
+</p>
+<p align="justify">[3] CHELTSOV, Anton; NOMURA, Natsuko; YENUGONDA, Venkata; <i>et al</i>. Allosteric inhibitor of β-catenin selectively targets oncogenic Wnt signaling in colon cancer. <b>Scientific Reports</b>, v. 10, n. 1, p. 8096, 2020.</p>
 </blockquote> 

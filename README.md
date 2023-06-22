@@ -8,9 +8,36 @@
 <img src="https://img.shields.io/badge/STATUS-Em%20desenvolvimento-576CFB"> <img src="https://img.shields.io/badge/LICENCE-GNU%20General%20Public%20License%20v3.0-75CA75">
 </blockquote> 
 
-<h2 align="left">Vamos revisar o que são as Redes Neurais? 👩🏻‍💻</h2>
+<h3 align="left">O que é temperatura de <i>melting</i>? :fire:</h3>
 <blockquote> 
 <p align="justify"> </p>
+</blockquote>
+
+<h3 align="left">Por que usar redes neurais? 👩🏻‍💻</h3>
+<blockquote> 
+<p align="justify"> </p>
+</blockquote>
+
+<h2 align="left">Banco de dados</h2>
+<blockquote> 
+<p align="justify"> </p>
+</blockquote> 
+
+<h2 align="left">Metodologia</h2>
+<blockquote> 
+<p align="justify"> </p>
+</blockquote> 
+
+<h3 align="left">Comparações :eyes:</h3>
+<blockquote> 
+<p align="justify">As funções de ativação desempenham um papel essencial nas redes neurais, sendo responsáveis por influenciar a saída de um neurônio. 
+Neste contexto, foram testadas três funções de ativação: a <a href="https://paperswithcode.com/method/sigmoid-activation">Sigmoid Activation</a>, a <a href="https://paperswithcode.com/method/leaky-relu">Leaky ReLU</a> e a <a href="https://paperswithcode.com/method/swish">Swish</a>.</p>
+  <blockquote> 
+  <p align="justify">A função de ativação sigmóide é uma função não linear que mapeia valores de entrada para um intervalo entre 0 e 1. É amplamente utilizada em problemas de classificação binária, onde a saída é 0 ou 1. A função sigmóide possui um gradiente suave, o que facilita a otimização usando o gradiente descendente. No entanto, ela também apresenta algumas desvantagens, como o problema do gradiente que desaparece, o que pode tornar o treinamento de redes neurais profundas mais desafiador.</p>
+  <p align="justify">A função de ativação Leaky ReLU é uma variante da função ReLU que aborda o problema conhecido como "morte ReLU". Ela introduz uma pequena inclinação para valores negativos, permitindo que o neurônio tenha uma saída diferente de zero mesmo quando a entrada é negativa. Essa inclinação geralmente é definida como um valor pequeno, como 0.01. Embora o Leaky ReLU seja computacionalmente mais exigente em comparação com o ReLU, ele pode ajudar a evitar o problema do gradiente que desaparece, que é comum em redes neurais profundas.</p>
+  <p align="justify">A função de ativação Swish é uma função relativamente nova que ganhou popularidade nos últimos anos. Ela é suave e não monotônica, semelhante à função sigmoide. O Swish é definido como a multiplicação da entrada pelo resultado da função sigmoide aplicada à entrada. Essa função inclui um parâmetro $\beta$ que pode ser aprendido. O Swish demonstrou superar o ReLU e outras funções de ativação em alguns casos, mas é computacionalmente mais exigente em comparação com o ReLU.</p>
+  </blockquote>
+<p align="justify">Em geral, a seleção da função de ativação depende do problema específico e da arquitetura da rede neural.</p>
 </blockquote>
 
 <h2 align="left">Conclusão</h2>

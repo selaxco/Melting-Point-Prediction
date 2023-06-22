@@ -215,6 +215,74 @@ def get_additive_input_type_2(additive):
 
 
 
+class MLP(nn.Module):
+    '''Classe que será utilizada como rede neural para o problema, podendo
+    ser criada de maneira personalizável e podendo até mesma ser utilizada
+    de outras formas ou aplicações.
+
+    Attributes:
+        camadas: torch.nn.Sequential, estrutura das camadas sequenciais da
+        rede criada.
+    
+    Methods:
+        __init__: inicializa a rede neural e cria suas camadas estruturadas;
+        forward: executa a rede a partir do pytorch.
+    '''
+    
+    def __init__(
+        self, funcao_ativacao, num_features, neuronios_c1, neuronios_c2,
+        neuronios_c3, num_targets
+    ):
+        '''Inicializa a classe e cria as camadas da rede.
+
+        Args:
+            self: MLP, instância própria da classe;
+
+            funcao_ativacao: torch.nn.Module, a função de ativação a ser
+            utilizada na rede neural como um todo;
+
+            num_features: int, número de dados de entrada da rede;
+            
+            neuronios_c1: int, número de neurônios da camada 1 (hidden
+            layer 1);
+            
+            neuronios_c2: int, número de neurônios da camada 2 (hidden
+            layer 2);
+            
+            neuronios_c3: int, número de neurônios da camada 3 (hidden
+            layer 3);
+            
+            num_targets: int, número de dados de saida da rede;
+        '''
+
+        super().__init__()
+
+        # Definindo as camadas da rede
+        self.camadas = nn.Sequential(
+            nn.Linear(num_features, neuronios_c1),
+            funcao_ativacao(),
+            nn.Linear(neuronios_c1, neuronios_c2),
+            funcao_ativacao(),
+            nn.Linear(neuronios_c2, neuronios_c3),
+            funcao_ativacao(),
+            nn.Linear(neuronios_c3, num_targets),
+        )
+
+    def forward(self, x):
+        '''Executa a rede a partir do pytorch.
+
+        Args:
+            self: MLP, instância própria da classe;
+            x: torch.Tensor, tensores dos dados a serem passados pela reda.
+        
+        Returns:
+            x: torch.Tensor, tensores com os valores previstos pela rede.
+        '''
+        x = self.camadas(x)
+        return x
+
+
+
 def cria_mlp(
         funcao_ativacao, x_treino, x_teste, y_treino, y_teste, normalizador_y,
         NEURONIOS_C1=50, NEURONIOS_C2=30, NEURONIOS_C3=25,
@@ -266,75 +334,12 @@ def cria_mlp(
         RMSE: float, erro médio da rede nas estimativas / predições.
     '''
 
-    class MLP(nn.Module):
-        '''Classe que será utilizada como rede neural para o problema, podendo
-        ser criada de maneira personalizável e podendo até mesma ser utilizada
-        de outras formas ou aplicações.
-
-        Attributes:
-            camadas: torch.nn.Sequential, estrutura das camadas sequenciais da
-            rede criada.
-        
-        Methods:
-            __init__: inicializa a rede neural e cria suas camadas estruturadas;
-            forward: executa a rede a partir do pytorch.
-        '''
-        
-        def __init__(
-            self, num_features, neuronios_c1, neuronios_c2, neuronios_c3,
-            num_targets
-        ):
-            '''Inicializa a classe e cria as camadas da rede.
-
-            Args:
-                self: MLP, instância própria da classe;
-
-                num_features: int, número de dados de entrada da rede;
-                
-                neuronios_c1: int, número de neurônios da camada 1 (hidden
-                layer 1);
-                
-                neuronios_c2: int, número de neurônios da camada 2 (hidden
-                layer 2);
-                
-                neuronios_c3: int, número de neurônios da camada 3 (hidden
-                layer 3);
-                
-                num_targets: int, número de dados de saida da rede;
-            '''
-
-            super().__init__()
-
-            # Definindo as camadas da rede
-            self.camadas = nn.Sequential(
-                        nn.Linear(num_features, neuronios_c1),
-                        funcao_ativacao(),
-                        nn.Linear(neuronios_c1, neuronios_c2),
-                        funcao_ativacao(),
-                        nn.Linear(neuronios_c2, neuronios_c3),
-                        funcao_ativacao(),
-                        nn.Linear(neuronios_c3, num_targets),
-                    )
-
-        def forward(self, x):
-            '''Executa a rede a partir do pytorch.
-
-            Args:
-                self: MLP, instância própria da classe;
-                x: torch.Tensor, tensores dos dados a serem passados pela reda.
-            
-            Returns:
-                x: torch.Tensor, tensores com os valores previstos pela rede.
-            '''
-            x = self.camadas(x)
-            return x
-
     NUM_DADOS_DE_ENTRADA = x_treino.shape[1]
     NUM_DADOS_DE_SAIDA = y_treino.shape[1]
 
     mlp = MLP(
-        NUM_DADOS_DE_ENTRADA, NEURONIOS_C1, NEURONIOS_C2, NEURONIOS_C3,
-        NUM_DADOS_DE_SAIDA
+        funcao_ativacao, NUM_DADOS_DE_ENTRADA, NEURONIOS_C1, NEURONIOS_C2,
+        NEURONIOS_C3, NUM_DADOS_DE_SAIDA
     )
     fn_perda = nn.MSELoss()
     otimizador = optim.Adam(mlp.parameters(), lr=TAXA_DE_APRENDIZADO)

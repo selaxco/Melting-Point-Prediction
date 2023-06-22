@@ -25,10 +25,31 @@
 
 <h2 align="left">Metodologia</h2>
 <blockquote> 
-<p align="justify"> </p>
+<p align="justify"> Como explicado anteriormente, o projeto visa utilizar Redes Neurais como um possível método de determinação da temperatura de melting de porteínas de um único dominio, porém, precisamo primeiramente entender como essas redes neurais foram construidas e quais as possíveis alterações que podem ser feitas nos modelos. As redes neurais desenvolvidas no projeto possuem uma estrutura similar entre si e podem ser consideradas como muito parecidas, justamente por conta de um dos objetivos ser a comparação de diferentes implementações e os resultados obtidos com tais.</p>
+<p align="justify">A primeira etapa para estrutração da rede foi pensar nas camadas escondidas (hidden layers) que irão compor as redes. Chegou-se na conclusão que poderiam ser utilizadas redes com 3 camadas escondidades que poderiam ter seus tamanhos variáveis a fim de comparação da eficácia e diferenciação destas.</p>
+<p align="justify">Começou-se então a etapa de análise das features a serem fornecidas para a rede. Os dados obtidos através do banco de dados exposto anteriormente explicitam a presença de algumas possibilidades para esses dados de entrada (input) para as redes, porém, foi feita uma determinação destes dados, sendo consideradas as facilidades de obtenção de tais dados em conjunto com a disponibilidade de acesso de tais informações. Com esta análise, chegamos a idealização de 21 ou 22 dados de entrada que seriam alimentados a rede em busca da temperatura de melting da proteína originadora dos dados.</p>
+<p align="justify">Os primeiros 20 dados a serem considerados são de facil acesso, principalmente em plataformas como o banco de dados online de proteínas <a href='https://www.uniprot.org'>UniProt</a> e se trata da quantização dos aminoácidos presentes na cadeia da proteína, ou seja, a rede receberia a quantidade de vezes que cada aminoácido se encontra na proteína. A escolha desta informação foi feita pela simplicidade e escalabilidade da rede para proteínas de diferentes tamanho sem que seja alterada sua estrutura básica.</p>
+<p align="justify">Os outros dados a serem considerados são, na verdade, apenas um dado, mas expresso de 2 diferentes formas. Uma das informações obtidas no banco de dados é justamente os aditivos presentes em solução com as proteínas estudadas, levando a uma alteração nas temperaturas de melting de tais proteínas pela interação destas com os aditivos. Pensou-se então em uma forma de passar estes dados não numéricos as redes que precisam de dados numéricos. Com a análise cuidadosa, foi possível a obtenção de dois métodos de trasnformação dos dados em números. O primeiro método consiste na determinação de um peso para cada uma das possibilidades de aditivos que seriam então somados e dividios pelo total dos pesos, gerando um valor de ponto flutuante entre 0 e 1. Um exemplo desta aplicação pode ser visto abaixo, onde o aditivo 1 possui um peso de 1 e o aditivo 2 possui um peso de 2.</p>
+
+<center>
+  
+| Aditivo 1 | Aditivo 2 | Total (soma / soma dos pesos) |
+| :------------: | :------------: | :------------: |
+| 0 | 0 | 0 |
+| 1 | 0 | 0.33333 |
+| 0 | 1 | 0.66666 |
+| 1 | 1 | 1 |
+  
+</center>
+
+<p align="justify"> O segundo método de trasnformação dos dados seria uma simples separação dos dados em dois valores binários, o primeiro valor numérico representaria a presença ou não do aditivo 1, enquanto o segundo representaria a presença ou não do aditivo 2. Os dois métodos foram utilizados para a criação das redes, desta forma, é possível a construção de redes que podem ser alteradas de diferentes formas para comparação de eficácia. </p>
+
+<p align="justify">Ao todo foram utilizadas 6 possíveis combinações diferentes de métodos, sendo estas combinações atingidas pela utilização de 2 formas diferentes de input para o dados de aditivos e outras 3 funções de ativação que foram escolhidas para serem aplicadas ao problema.</p>
+<p align="justify">Vamos ver um pouco sobre cada um dessas diferenças aplicadas </p>
 </blockquote> 
 
 <h3 align="left">Comparações :eyes:</h3>
+
 <blockquote> 
 <p align="justify">As funções de ativação desempenham um papel essencial nas redes neurais, sendo responsáveis por influenciar a saída de um neurônio. 
 Neste contexto, foram testadas três funções de ativação: a <a href="https://paperswithcode.com/method/sigmoid-activation">Sigmoid Activation</a>, a <a href="https://paperswithcode.com/method/leaky-relu">Leaky ReLU</a> e a <a href="https://paperswithcode.com/method/swish">Swish</a>.</p>
@@ -57,4 +78,4 @@ Neste contexto, foram testadas três funções de ativação: a <a href="https:/
 <p align="justify">[2] TALAPATI, Sumalatha Rani; GOYAL, Megha; NATARAJ, Vijayashankar; <i>et al</i>. Structural and binding studies of cyclin‐dependent kinase 2 with NU6140 inhibitor. <b>Chemical Biology & Drug Design</b>, v. 98, n. 5, p. 857–868, 2021.
 </p>
 <p align="justify">[3] CHELTSOV, Anton; NOMURA, Natsuko; YENUGONDA, Venkata; <i>et al</i>. Allosteric inhibitor of β-catenin selectively targets oncogenic Wnt signaling in colon cancer. <b>Scientific Reports</b>, v. 10, n. 1, p. 8096, 2020.</p>
-</blockquote> 
+</blockquote>

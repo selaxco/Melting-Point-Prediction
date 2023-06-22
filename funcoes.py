@@ -346,7 +346,8 @@ def cria_mlp(
 
     mlp.train()
 
-    desc = 'Progresso: '
+    tipo = 1 if NUM_DADOS_DE_ENTRADA == 21 else 2
+    desc = f'Progresso {funcao_ativacao.__name__} {tipo}: '
     loop = trange(NUM_EPOCAS, ncols=170, desc=desc)
     for _ in loop:
         y_pred = mlp(x_treino)

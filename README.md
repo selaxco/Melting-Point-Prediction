@@ -30,7 +30,8 @@
 
 <h3 align="left">Comparações :eyes:</h3>
 <blockquote> 
-<p align="justify"> </p>
+<p align="justify">As funções de ativação desempenham um papel essencial nas redes neurais, sendo responsáveis por influenciar a saída de um neurônio. 
+Neste contexto, foram testadas três funções de ativação: a <a href="https://paperswithcode.com/method/sigmoid-activation">Sigmoid Activation</a>, a <a href="https://paperswithcode.com/method/leaky-relu">Leaky ReLU</a> e a <a href="https://paperswithcode.com/method/swish">Swish</a>.</p>
 </blockquote>
 
 <h2 align="left">Conclusão</h2>

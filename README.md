@@ -8,7 +8,27 @@
 <img src="https://img.shields.io/badge/STATUS-Em%20desenvolvimento-576CFB"> <img src="https://img.shields.io/badge/LICENCE-GNU%20General%20Public%20License%20v3.0-75CA75">
 </blockquote> 
 
-<h2 align="left">Vamos revisar o que são as Redes Neurais? 👩🏻‍💻</h2>
+<h3 align="left">O que é temperatura de <i>melting</i>? :fire:</h3>
+<blockquote> 
+<p align="justify"> </p>
+</blockquote>
+
+<h3 align="left">Por que usar redes neurais? 👩🏻‍💻</h3>
+<blockquote> 
+<p align="justify"> </p>
+</blockquote>
+
+<h2 align="left">Banco de dados</h2>
+<blockquote> 
+<p align="justify"> </p>
+</blockquote> 
+
+<h2 align="left">Metodologia</h2>
+<blockquote> 
+<p align="justify"> </p>
+</blockquote> 
+
+<h3 align="left">Comparações :eyes:</h3>
 <blockquote> 
 <p align="justify"> </p>
 </blockquote>

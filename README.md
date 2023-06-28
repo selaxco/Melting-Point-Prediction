@@ -10,20 +10,20 @@
 
 <h3 align="left">O que é temperatura de <i>melting</i>? :fire:</h3>
 <blockquote> 
-<p align="justify"> </p>
+<p align="justify">A temperatura de <i>melting</i> da proteína é o ponto em que a concentração da proteína em sua forma dobrada é igual à concentração da proteína desdobrada. Essa medida é crucial para o estudo da estabilidade das proteínas, sendo aplicável em diversas áreas, desde a compreensão dos princípios físicos e químicos do enovelamento de proteínas até a melhoria da resistência térmica de enzimas para acelerar reações químicas em processos biofarmacêuticos e biotecnológicos.</p>
+<p align="justify">A determinação da temperatura de <i>melting</i> pode ser realizada por meio de métodos laboratoriais, tais como calorimetria de varredura diferencial, dicroísmo circular, espectroscopia de infravermelho por transformada de Fourier, entre outros. Além disso, existem abordagens baseadas em bioinformática para prever a temperatura de fusão de uma proteína a partir de sua sequência de aminoácidos, como é o caso do nosso projeto.</p>
 </blockquote>
 
 <h3 align="left">Por que usar redes neurais? 👩🏻‍💻</h3>
 <blockquote> 
 <p align="justify"> Antes de entender a razão de escolhermos utilizar redes neurais, é importante entender o que elas são e como elas funcionam. Baseado no cérebro humano, esse modelo de inteligência artificial é capaz de reconhecer padrões existentes em um conjunto de dados e aprender com os erros cometidos. Mas de onde surgiu a analogia com o cérebro? Bom, no sentido em que estamos trabalhando, falar dos neurônios diz respeito, principalmente, a conectividade que eles são capazes de fazer uns com os outros e a importância dela para as tomadas de decisões com base nos padrões identificados. </p>
 <p align="justify">A arquitetura das redes neurais consiste, basicamente, em uma camada que recebe os dados de entrada, uma ou mais camadas ocultas responsáveis por realizar operações em uma função de ativação que determina como a saída é calculada e, enfim, uma camada de saída. Cada um dos neurônios possui um peso atribuído a ele, que é modificado conforme a rede precisa ser ajustada de modo a minimizar o erro entre a saída produzida e a saída desejada.</p>
-
 </blockquote>
 
 <h2 align="left">Banco de dados</h2>
 <blockquote> 
 <p align="justify"> </p>
-</blockquote> 
+</blockquote>
 
 <h2 align="left">Metodologia</h2>
 <blockquote> 
@@ -32,7 +32,6 @@
 <p align="justify">Começou-se então a etapa de análise das features a serem fornecidas para a rede. Os dados obtidos através do banco de dados exposto anteriormente explicitam a presença de algumas possibilidades para esses dados de entrada (input) para as redes, porém, foi feita uma determinação destes dados, sendo consideradas as facilidades de obtenção de tais dados em conjunto com a disponibilidade de acesso de tais informações. Com esta análise, chegamos a idealização de 21 ou 22 dados de entrada que seriam alimentados a rede em busca da temperatura de melting da proteína originadora dos dados.</p>
 <p align="justify">Os primeiros 20 dados a serem considerados são de facil acesso, principalmente em plataformas como o banco de dados online de proteínas <a href='https://www.uniprot.org'>UniProt</a> e se trata da quantização dos aminoácidos presentes na cadeia da proteína, ou seja, a rede receberia a quantidade de vezes que cada aminoácido se encontra na proteína. A escolha desta informação foi feita pela simplicidade e escalabilidade da rede para proteínas de diferentes tamanho sem que seja alterada sua estrutura básica.</p>
 <p align="justify">Os outros dados a serem considerados são, na verdade, apenas um dado, mas expresso de 2 diferentes formas. Uma das informações obtidas no banco de dados é justamente os aditivos presentes em solução com as proteínas estudadas, levando a uma alteração nas temperaturas de melting de tais proteínas pela interação destas com os aditivos. Pensou-se então em uma forma de passar estes dados não numéricos as redes que precisam de dados numéricos. Com a análise cuidadosa, foi possível a obtenção de dois métodos de trasnformação dos dados em números. O primeiro método consiste na determinação de um peso para cada uma das possibilidades de aditivos que seriam então somados e dividios pelo total dos pesos, gerando um valor de ponto flutuante entre 0 e 1. Um exemplo desta aplicação pode ser visto abaixo, onde o aditivo 1 possui um peso de 1 e o aditivo 2 possui um peso de 2.</p>
-
 <center>
 
 | Aditivo 1 | Aditivo 2 | Total (soma / soma dos pesos) |
@@ -43,15 +42,12 @@
 | 1 | 1 | 1 |
   
 </center>
-
 <p align="justify"> O segundo método de transformação dos dados seria uma simples separação dos dados em dois valores binários, o primeiro valor numérico representaria a presença ou não do aditivo 1, enquanto o segundo representaria a presença ou não do aditivo 2. Os dois métodos foram utilizados para a criação das redes, desta forma, é possível a construção de redes que podem ser alteradas de diferentes formas para comparação de eficácia. </p>
-
 <p align="justify">Ao todo foram utilizadas 6 possíveis combinações diferentes de métodos, sendo estas combinações atingidas pela utilização de 2 formas diferentes de input para o dados de aditivos e outras 3 funções de ativação que foram escolhidas para serem aplicadas ao problema.</p>
 <p align="justify">Vamos ver um pouco sobre cada um dessas diferenças aplicadas. </p>
 </blockquote> 
 
 <h3 align="left">Comparações :eyes:</h3>
-
 <blockquote> 
 <p align="justify">As funções de ativação desempenham um papel essencial nas redes neurais, sendo responsáveis por influenciar a saída de um neurônio. 
 Neste contexto, foram testadas três funções de ativação: a <a href="https://paperswithcode.com/method/sigmoid-activation">Sigmoid Activation</a>, a <a href="https://paperswithcode.com/method/leaky-relu">Leaky ReLU</a> e a <a href="https://paperswithcode.com/method/swish">Swish</a>.</p>

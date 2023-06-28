@@ -8,14 +8,14 @@
 <img src="https://img.shields.io/badge/STATUS-Em%20desenvolvimento-576CFB"> <img src="https://img.shields.io/badge/LICENCE-GNU%20General%20Public%20License%20v3.0-75CA75">
 </blockquote> 
 
-<h3 align="left">O que é temperatura de <i>melting</i>? :fire:</h3>
 <blockquote> 
+<h3 align="left">O que é temperatura de <i>melting</i>? :fire:</h3>
 <p align="justify">A temperatura de <i>melting</i> da proteína é o ponto em que a concentração da proteína em sua forma dobrada é igual à concentração da proteína desdobrada. Essa medida é crucial para o estudo da estabilidade das proteínas, sendo aplicável em diversas áreas, desde a compreensão dos princípios físicos e químicos do enovelamento de proteínas até a melhoria da resistência térmica de enzimas para acelerar reações químicas em processos biofarmacêuticos e biotecnológicos.</p>
 <p align="justify">A determinação da temperatura de <i>melting</i> pode ser realizada por meio de métodos laboratoriais, tais como calorimetria de varredura diferencial, dicroísmo circular, espectroscopia de infravermelho por transformada de Fourier, entre outros. Além disso, existem abordagens baseadas em bioinformática para prever a temperatura de fusão de uma proteína a partir de sua sequência de aminoácidos, como é o caso do nosso projeto.</p>
 </blockquote>
 
-<h3 align="left">Por que usar redes neurais? 👩🏻‍💻</h3>
 <blockquote> 
+<h3 align="left">Por que usar redes neurais? 👩🏻‍💻</h3> 
 <p align="justify"> Antes de entender a razão de escolhermos utilizar redes neurais, é importante entender o que elas são e como elas funcionam. Baseado no cérebro humano, esse modelo de inteligência artificial é capaz de reconhecer padrões existentes em um conjunto de dados e aprender com os erros cometidos. Mas de onde surgiu a analogia com o cérebro? Bom, no sentido em que estamos trabalhando, falar dos neurônios diz respeito, principalmente, a conectividade que eles são capazes de fazer uns com os outros e a importância dela para as tomadas de decisões com base nos padrões identificados. </p>
 <p align="justify">A arquitetura das redes neurais consiste, basicamente, em uma camada que recebe os dados de entrada, uma ou mais camadas ocultas responsáveis por realizar operações em uma função de ativação que determina como a saída é calculada e, enfim, uma camada de saída. Cada um dos neurônios possui um peso atribuído a ele, que é modificado conforme a rede precisa ser ajustada de modo a minimizar o erro entre a saída produzida e a saída desejada.</p>
 </blockquote>

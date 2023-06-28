@@ -92,8 +92,14 @@ Neste contexto, foram testadas três funções de ativação: a <a href="https:/
 <h2 align="left">Conclusão</h2>
 <blockquote> 
 <p align="justify">Com base nos resultados obtidos, pudemos observar uma tendência clara ao analisar apenas a estrutura primária das proteínas. Os valores de temperatura de _melting_ para a nossa seleção de proteínas variaram entre 67 °C (valor máximo) e 40.83 °C (valor mínimo), e constatamos que o erro foi pequeno, representando apenas um quarto da diferença entre os pontos extremos. É importante ressaltar que a temperatura de _melting_ pode ser facilmente influenciada por fatores externos, como aditivos na solução e pH.</p>
-<p align="justify">Nesse sentido, os próximos passos serão: (i) aprimorar ainda mais o treinamento da rede neural, (ii) estudar proteínas com mais de um domínio e (iii) incorporar informações estruturais, como a estrutura terciária e quaternária. Com esses dados, focados na co-evolução, poderemos investigar mais profundamente como determinar essa informação utilizando apenas parâmetros bioquímicos.</p>
-</blockquote> 
+<p align="justify">Nesse sentido, os próximos passos serão:</p>
+  <ol>
+  <li><p align="justify">Aprimorar ainda mais o treinamento da rede neural;</p></li>
+  <li><p align="justify">Estudar proteínas com mais de um domínio;</p></li>
+  <li><p align="justify">Incorporar informações estruturais, como a estrutura terciária e quaternária.</p></li>
+</ol>
+<p align="justify">Com esses dados, focados na co-evolução, poderemos investigar mais profundamente como determinar essa informação utilizando apenas parâmetros bioquímicos.</p>
+</blockquote>
 
 <h2 align="left">Agradecimentos</h2>
 <blockquote> 

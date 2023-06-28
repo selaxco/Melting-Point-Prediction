@@ -61,7 +61,7 @@ Neste contexto, foram testadas três funções de ativação: a <a href="https:/
   <p align="justify">A função de ativação Swish é uma função relativamente nova que ganhou popularidade nos últimos anos. Ela é suave e não monotônica, semelhante à função sigmoide. O Swish é definido como a multiplicação da entrada pelo resultado da função sigmoide aplicada à entrada. Essa função inclui um parâmetro $\beta$ que pode ser aprendido. O Swish demonstrou superar o ReLU e outras funções de ativação em alguns casos, mas é computacionalmente mais exigente em comparação com o ReLU.</p>
   </blockquote>
 <p align="justify">Em geral, a seleção da função de ativação depende do problema específico e da arquitetura da rede neural.</p>
-<p align="justify">Após a conclusão de todos os treinos e testes, foram calculados os erros médios para cada uma das seis situações determinadas.</p>
+<p align="justify">Após a conclusão de todos os treinos e testes programas, foram calculados os erros médios para cada uma das seis situações determinadas.</p>
 <center>
 
 | Leaky ReLU com _float_ | Leaky ReLU com binário | Sigmoid com _float_ | Sigmoid com binário | Swish com _float_ | Swish com binário |
@@ -69,7 +69,26 @@ Neste contexto, foram testadas três funções de ativação: a <a href="https:/
 | 3.650 °C | 3.810 °C | 4.420 °C | 4.600 °C | 4.117 °C | 4.440 °C |
 
 </center>
-<p align="justify">Após a conclusão de todos os treinos e testes, foram calculados os erros médios para cada uma das seis situações determinadas.</p>
+<p align="justify">Com base nesse resultado, foi constatado que a função de ativação Leaky ReLU com o tipo de dado <i>float</i> apresentou o menor erro médio, sendo selecionada como o método decisivo. Em seguida, foi conduzido um último teste, no qual foi obtido o valor de 3.992 °C.</p>
+<p align="justify">Por último, procedemos com o teste utilizando valores externos ao banco de dados. Foram escolhidas duas proteínas: a quinase dependente de ciclina do <i>Homo sapiens</i> e a beta-catenina do peixe-zebra (<i>Danio rerio</i>). É importante ressaltar que a beta-catenina, além de não pertencer à espécie humana, possui mais de 300 aminoácidos, o que a diferencia consideravelmente dos valores presentes no banco de dados.</p>
+<p align="justify">Para a quinase dependente de ciclina:</p>
+<center>
+
+| _Output_ da rede | Valor de referência | Erro aproximado | 
+| :--------------: | :-----------------: | :-------------: |
+| 51.493 °C | 45 °C | 7 °C |
+
+</center>
+<p align="justify">Para a beta-catenina:</p>
+<center>
+
+| _Output_ da rede | Valor de referência | Erro aproximado | 
+| :--------------: | :-----------------: | :-------------: |
+| 58.180 °C | 52 °C | 6 °C |
+
+</center>
+
+
 
 </blockquote>
 
